@@ -7,13 +7,13 @@ const morgan = require("morgan");
 require("dotenv").config();
 // SETUP
 const app = express();
-// mongoose.connect(
-// 	process.env.MONGO_URI,
-// 	{ useNewUrlParser: true, useUnifiedTopology: true },
-// 	() => {
-// 		console.log(`Database connect... ${new Date().toLocaleTimeString()}`);
-// 	}
-// );
+mongoose.connect(
+	process.env.MONGO_URI,
+	{ useNewUrlParser: true, useUnifiedTopology: true },
+	() => {
+		console.log(`Database connect... ${new Date().toLocaleTimeString()}`);
+	}
+);
 app.use(express.json());
 app.use(morgan("tiny"));
 app.use(cookieParser());
