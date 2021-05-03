@@ -22,13 +22,13 @@ app.use(cookieParser());
 global.testVar = [];
 
 // ROUTES
-const auth = require("./Route/auth");
+const auth = require("./Routes/auth");
 app.use("/auth", auth);
 app.get("/", (req, res) => {
 	// console.log(req);
 	const docLink = process.env.DOC_LINK;
 	res.json({
-		message: `COVID-19 Vaccine Passport API \nDocumentation at ${docLink}`,
+		message: `COVID-19 Vaccine Passport API\nDocumentation at ${docLink}`,
 	});
 });
 
